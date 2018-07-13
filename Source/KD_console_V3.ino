@@ -1,11 +1,11 @@
 /*
 	year: 2018
-	name: KD Console V3
+	name: KD Console V3 - a tiny pocket console you can take anywhere.
 	author: yuval_Kedar
 	platform: Arduino nano.
 	0.91" monochrome OLED display
 	
-	choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
+	A suitable font can be found at https://github.com/olikraus/u8g2/wiki/fntlistall
 */
 
 #include <Arduino.h>
@@ -124,18 +124,13 @@ void init_display(){
 
 void new_game(){
 	u8g2.clearDisplay();
-
 	delay(200);
 }
 
 void player_movement(){
 	u8g2.clearBuffer();
-	if(r_pressed && x_position <= 118){
-		x_position+=5;
-	}
-	if(l_pressed && x_position >= 1){
-		x_position-=5;
-	}
+	if(r_pressed && x_position <= 118)	x_position+=5;
+	if(l_pressed && x_position >= 1)	x_position-=5;
 	for(uint8_t l = 0; l < CONTROLLER_SIZE; l++){
 		u8g2.drawPixel(x_position + l, 30);
 	}
@@ -258,34 +253,22 @@ void pong_update(){
 //_________ SNAKE______________
 
 void snake_update(){
-	u8g2.clearBuffer();
-	u8g2.sendBuffer();
+	// u8g2.clearBuffer();
+	// u8g2.sendBuffer();
 }
 
 //_________ RACE______________
 
-void race_update(){
-	u8g2.clearBuffer();
-	u8g2.sendBuffer();
-}
+void race_update(){}
 
 //_________ BRICKS______________
 
-void bricks_update(){
-	u8g2.clearBuffer();
-	u8g2.sendBuffer();
-}
+void bricks_update(){}
 
 //_________ TED-SHOW______________
 
-void ted_show_update(){
-	u8g2.clearBuffer();
-	u8g2.sendBuffer();
-}
+void ted_show_update(){}
 
 //_________ SPACE-INVADERS______________
 
-void space_invaders_update(){
-	u8g2.clearBuffer();
-	u8g2.sendBuffer();
-}
+void space_invaders_update(){}
